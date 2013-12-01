@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,12 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -31,8 +38,7 @@ public class AbakaffeFragment extends Fragment {
     private Button updateButton;
     private TextView statusTextView, powerTextView, hoursTextView, minutesTextView, secondsTextView;
 
-
-    public AbakaffeFragment(Context context) {
+	public AbakaffeFragment(Context context) {
         this.context = context;
     }
 
